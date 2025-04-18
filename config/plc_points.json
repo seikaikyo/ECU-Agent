@@ -1,0 +1,956 @@
+{
+    "metric_groups": [
+        {
+            "group_name": "溫度控制器",
+            "device_id": 1,
+            "start_address": 40001,
+            "count": 78,
+            "metrics": [
+                {
+                    "id": "left_main_temp_pv",
+                    "name": "左側主控_PV",
+                    "register_offset": 0,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_main_temp_sv",
+                    "name": "左側主控_SV",
+                    "register_offset": 1,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_aux1a_temp_pv",
+                    "name": "左側輔控1A_PV",
+                    "register_offset": 2,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_aux1b_temp_pv",
+                    "name": "左側輔控1B_PV",
+                    "register_offset": 3,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_aux2a_temp_pv",
+                    "name": "左側輔控2A_PV",
+                    "register_offset": 4,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_aux2b_temp_pv",
+                    "name": "左側輔控2B_PV",
+                    "register_offset": 5,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_aux1a_mv",
+                    "name": "左側輔控1A_MV",
+                    "register_offset": 6,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "left_aux1b_mv",
+                    "name": "左側輔控1B_MV",
+                    "register_offset": 7,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "left_aux2a_mv",
+                    "name": "左側輔控2A_MV",
+                    "register_offset": 8,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "left_aux2b_mv",
+                    "name": "左側輔控2B_MV",
+                    "register_offset": 9,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "left_aux1a_ct",
+                    "name": "左側輔控1A_CT",
+                    "register_offset": 10,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "left_aux1b_ct",
+                    "name": "左側輔控1B_CT",
+                    "register_offset": 11,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "left_aux2a_ct",
+                    "name": "左側輔控2A_CT",
+                    "register_offset": 12,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "left_aux2b_ct",
+                    "name": "左側輔控2B_CT",
+                    "register_offset": 13,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "right_main_temp_pv",
+                    "name": "右側主控_PV",
+                    "register_offset": 14,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_main_temp_sv",
+                    "name": "右側主控_SV",
+                    "register_offset": 15,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_aux1a_temp_pv",
+                    "name": "右側輔控1A_PV",
+                    "register_offset": 16,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_aux1b_temp_pv",
+                    "name": "右側輔控1B_PV",
+                    "register_offset": 17,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_aux2a_temp_pv",
+                    "name": "右側輔控2A_PV",
+                    "register_offset": 18,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_aux2b_temp_pv",
+                    "name": "右側輔控2B_PV",
+                    "register_offset": 19,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_aux1a_mv",
+                    "name": "右側輔控1A_MV",
+                    "register_offset": 20,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "right_aux1b_mv",
+                    "name": "右側輔控1B_MV",
+                    "register_offset": 21,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "right_aux2a_mv",
+                    "name": "右側輔控2A_MV",
+                    "register_offset": 22,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "right_aux2b_mv",
+                    "name": "右側輔控2B_MV",
+                    "register_offset": 23,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "%"
+                },
+                {
+                    "id": "right_aux1a_ct",
+                    "name": "右側輔控1A_CT",
+                    "register_offset": 24,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "right_aux1b_ct",
+                    "name": "右側輔控1B_CT",
+                    "register_offset": 25,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "right_aux2a_ct",
+                    "name": "右側輔控2A_CT",
+                    "register_offset": 26,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "right_aux2b_ct",
+                    "name": "右側輔控2B_CT",
+                    "register_offset": 27,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "left_oven_temp",
+                    "name": "左側爐內超溫",
+                    "register_offset": 28,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_oven_temp",
+                    "name": "右側爐內超溫",
+                    "register_offset": 29,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_heater1a_temp",
+                    "name": "左側電熱室超溫-1A",
+                    "register_offset": 30,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_heater1b_temp",
+                    "name": "左側電熱室超溫-1B",
+                    "register_offset": 31,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_heater2a_temp",
+                    "name": "左側電熱室超溫-2A",
+                    "register_offset": 32,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_heater2b_temp",
+                    "name": "左側電熱室超溫-2B",
+                    "register_offset": 33,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_heater1a_temp",
+                    "name": "右側電熱室超溫-1A",
+                    "register_offset": 34,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_heater1b_temp",
+                    "name": "右側電熱室超溫-1B",
+                    "register_offset": 35,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_heater2a_temp",
+                    "name": "右側電熱室超溫-2A",
+                    "register_offset": 36,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_heater2b_temp",
+                    "name": "右側電熱室超溫-2B",
+                    "register_offset": 37,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_inner_top",
+                    "name": "左側出風-內上",
+                    "register_offset": 38,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_inner_middle",
+                    "name": "左側出風-內中",
+                    "register_offset": 39,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_inner_bottom",
+                    "name": "左側出風-內下",
+                    "register_offset": 40,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_middle_top",
+                    "name": "左側出風-中上",
+                    "register_offset": 41,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_middle_middle",
+                    "name": "左側出風-中中",
+                    "register_offset": 42,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_middle_bottom",
+                    "name": "左側出風-中下",
+                    "register_offset": 43,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_outer_top",
+                    "name": "左側出風-外上",
+                    "register_offset": 44,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_outer_middle",
+                    "name": "左側出風-外中",
+                    "register_offset": 45,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_outlet_temp_outer_bottom",
+                    "name": "左側出風-外下",
+                    "register_offset": 46,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_inner_top",
+                    "name": "左側入風-內上",
+                    "register_offset": 47,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_inner_middle",
+                    "name": "左側入風-內中",
+                    "register_offset": 48,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_inner_bottom",
+                    "name": "左側入風-內下",
+                    "register_offset": 49,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_middle_top",
+                    "name": "左側入風-中上",
+                    "register_offset": 50,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_middle_middle",
+                    "name": "左側入風-中中",
+                    "register_offset": 51,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_middle_bottom",
+                    "name": "左側入風-中下",
+                    "register_offset": 52,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_outer_top",
+                    "name": "左側入風-外上",
+                    "register_offset": 53,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_outer_middle",
+                    "name": "左側入風-外中",
+                    "register_offset": 54,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "left_inlet_temp_outer_bottom",
+                    "name": "左側入風-外下",
+                    "register_offset": 55,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_inner_top",
+                    "name": "右側出風-內上",
+                    "register_offset": 56,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_inner_middle",
+                    "name": "右側出風-內中",
+                    "register_offset": 57,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_inner_bottom",
+                    "name": "右側出風-內下",
+                    "register_offset": 58,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_middle_top",
+                    "name": "右側出風-中上",
+                    "register_offset": 59,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_middle_middle",
+                    "name": "右側出風-中中",
+                    "register_offset": 60,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_middle_bottom",
+                    "name": "右側出風-中下",
+                    "register_offset": 61,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_outer_top",
+                    "name": "右側出風-外上",
+                    "register_offset": 62,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_outer_middle",
+                    "name": "右側出風-外中",
+                    "register_offset": 63,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_outlet_temp_outer_bottom",
+                    "name": "右側出風-外下",
+                    "register_offset": 64,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_inner_top",
+                    "name": "右側入風-內上",
+                    "register_offset": 65,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_inner_middle",
+                    "name": "右側入風-內中",
+                    "register_offset": 66,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_inner_bottom",
+                    "name": "右側入風-內下",
+                    "register_offset": 67,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_middle_top",
+                    "name": "右側入風-中上",
+                    "register_offset": 68,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_middle_middle",
+                    "name": "右側入風-中中",
+                    "register_offset": 69,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_middle_bottom",
+                    "name": "右側入風-中下",
+                    "register_offset": 70,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_outer_top",
+                    "name": "右側入風-外上",
+                    "register_offset": 71,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_outer_middle",
+                    "name": "右側入風-外中",
+                    "register_offset": 72,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "right_inlet_temp_outer_bottom",
+                    "name": "右側入風-外下",
+                    "register_offset": 73,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "heat_exchanger_inlet_temp",
+                    "name": "節能箱廢熱進",
+                    "register_offset": 74,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "heat_exchanger_outlet_temp",
+                    "name": "節能箱廢熱出",
+                    "register_offset": 75,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "cooling_fan_inlet_temp",
+                    "name": "節能箱冷風進",
+                    "register_offset": 76,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                },
+                {
+                    "id": "cooling_fan_outlet_temp",
+                    "name": "節能箱冷風出",
+                    "register_offset": 77,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "℃"
+                }
+            ]
+        },
+        {
+            "group_name": "馬達和壓力",
+            "device_id": 2,
+            "start_address": 40001,
+            "count": 25,
+            "metrics": [
+                {
+                    "id": "motor_freq_left_1a",
+                    "name": "左側馬達頻率-1A",
+                    "register_offset": 0,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_left_1b",
+                    "name": "左側馬達頻率-1B",
+                    "register_offset": 1,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_left_2a",
+                    "name": "左側馬達頻率-2A",
+                    "register_offset": 2,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_left_2b",
+                    "name": "左側馬達頻率-2B",
+                    "register_offset": 3,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_right_1a",
+                    "name": "右側馬達頻率-1A",
+                    "register_offset": 4,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_right_1b",
+                    "name": "右側馬達頻率-1B",
+                    "register_offset": 5,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_right_2a",
+                    "name": "右側馬達頻率-2A",
+                    "register_offset": 6,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_right_2b",
+                    "name": "右側馬達頻率-2B",
+                    "register_offset": 7,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_freq_nitrogen",
+                    "name": "進氣馬達頻率",
+                    "register_offset": 8,
+                    "data_type": "INT16",
+                    "scale_factor": 100.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "motor_current_left_1a",
+                    "name": "左側馬達電流-1A",
+                    "register_offset": 9,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_left_1b",
+                    "name": "左側馬達電流-1B",
+                    "register_offset": 10,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_left_2a",
+                    "name": "左側馬達電流-2A",
+                    "register_offset": 11,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_left_2b",
+                    "name": "左側馬達電流-2B",
+                    "register_offset": 12,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_right_1a",
+                    "name": "右側馬達電流-1A",
+                    "register_offset": 13,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_right_1b",
+                    "name": "右側馬達電流-1B",
+                    "register_offset": 14,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_right_2a",
+                    "name": "右側馬達電流-2A",
+                    "register_offset": 15,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_right_2b",
+                    "name": "右側馬達電流-2B",
+                    "register_offset": 16,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "motor_current_nitrogen",
+                    "name": "進氣馬達電流",
+                    "register_offset": 17,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "damper_cda_pressure",
+                    "name": "風門CDA壓力",
+                    "register_offset": 18,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "kPa"
+                },
+                {
+                    "id": "jr2_cda_pressure",
+                    "name": "軸冷CDA壓力",
+                    "register_offset": 19,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "kPa"
+                },
+                {
+                    "id": "hepa_pressure_left",
+                    "name": "HEPA壓差_左",
+                    "register_offset": 20,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "Pa"
+                },
+                {
+                    "id": "hepa_pressure_right",
+                    "name": "HEPA壓差_右",
+                    "register_offset": 21,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "Pa"
+                },
+                {
+                    "id": "axial_cda_flow",
+                    "name": "軸冷CDA流量",
+                    "register_offset": 22,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "L/min"
+                },
+                {
+                    "id": "fan_speed",
+                    "name": "節能箱進風風速",
+                    "register_offset": 23,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "m/sec"
+                },
+                {
+                    "id": "fan_volume",
+                    "name": "節能箱進氣風量",
+                    "register_offset": 24,
+                    "data_type": "INT16",
+                    "scale_factor": 10.0,
+                    "unit": "CMM"
+                }
+            ]
+        },
+        {
+            "group_name": "電表數據",
+            "device_id": 3,
+            "start_address": 40001,
+            "count": 26,
+            "metrics": [
+                {
+                    "id": "voltage_avg",
+                    "name": "電壓(平均值)",
+                    "register_offset": 0,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "V"
+                },
+                {
+                    "id": "current_avg",
+                    "name": "電流(平均值)",
+                    "register_offset": 2,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "current_r",
+                    "name": "電流(R)",
+                    "register_offset": 4,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "current_s",
+                    "name": "電流(S)",
+                    "register_offset": 6,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "current_t",
+                    "name": "電流(T)",
+                    "register_offset": 8,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "A"
+                },
+                {
+                    "id": "power_factor",
+                    "name": "功率因數(PF)",
+                    "register_offset": 10,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": ""
+                },
+                {
+                    "id": "frequency",
+                    "name": "頻率(Hz)",
+                    "register_offset": 12,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "Hz"
+                },
+                {
+                    "id": "active_power",
+                    "name": "瞬時實功率(P)",
+                    "register_offset": 14,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "kW"
+                },
+                {
+                    "id": "reactive_power",
+                    "name": "瞬時虛功率(Q)",
+                    "register_offset": 16,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "kVAR"
+                },
+                {
+                    "id": "apparent_power",
+                    "name": "瞬時視在功率(S)",
+                    "register_offset": 18,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "kVA"
+                },
+                {
+                    "id": "active_energy",
+                    "name": "累積實功率(P)",
+                    "register_offset": 20,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "kWh"
+                },
+                {
+                    "id": "reactive_energy",
+                    "name": "累積虛功率(Q)",
+                    "register_offset": 22,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "kVARh"
+                },
+                {
+                    "id": "apparent_energy",
+                    "name": "累積視在功率(S)",
+                    "register_offset": 24,
+                    "data_type": "FLOAT32",
+                    "scale_factor": 1.0,
+                    "unit": "kVAh"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+# 告警管理器配置
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+# 規則檔案載入配置
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# 收集配置
+scrape_configs:
+  # 監控 Prometheus 伺服器本身
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+
+  # 中央收集器 - Push Gateway
+  - job_name: 'push_gateway'
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['pushgateway:9091']
+
+  # 直接收集代理的指標 (若有啟用本地HTTP服務)
+  - job_name: 'modbus_agents'
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      # 請替換為實際的代理IP和埠號
+      # - '機台1代理IP:8000'
+      # - '機台2代理IP:8000'
+      # - '機台3代理IP:8000'
+      # - '機台4代理IP:8000'

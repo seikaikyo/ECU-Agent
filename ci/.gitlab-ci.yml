@@ -1,0 +1,169 @@
+# Modbus 收集代理 CI/CD 配置文件
+
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  # 全局變數
+  SERVER_IP: "192.168.1.100"  # 預設中央伺服器 IP，可在 GitLab CI/CD 變數中覆蓋
+  LOCAL_PORT: "8000"          # 預設本地 HTTP 埠
+  INTERVAL: "5"               # 預設收集間隔（秒）
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"  # pip 緩存目錄
+
+# 共用快取設定
+cache:
+  paths:
+    - .pip-cache/
+    - venv/
+
+# 構建代理程式和配置文件
+build_agent:
+  stage: build
+  image: python:3.9
+  script:
+    - echo "構建 Modbus 收集代理..."
+    - python -m venv venv
+    - source venv/bin/activate
+    - pip install pymodbus prometheus-client requests
+    # 版本號更新
+    - echo "v$(date +%Y%m%d)-${CI_COMMIT_SHORT_SHA}" > VERSION
+    # 打包文件
+    - mkdir -p dist/agent dist/config
+    - cp agent/collector_agent.py agent/deploy_agent.sh dist/agent/
+    - cp -r config/devices dist/config/
+    - cp config/plc_points.json dist/config/
+    - cp scripts/utils.sh dist/
+    - cp VERSION dist/
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+# 運行測試
+test_agent:
+  stage: test
+  image: python:3.9
+  script:
+    - echo "測試 Modbus 收集代理..."
+    - python -m venv venv
+    - source venv/bin/activate
+    - pip install pymodbus prometheus-client requests pytest pytest-mock
+    # 檢查語法
+    - python -m py_compile agent/collector_agent.py
+    # 添加單元測試
+    # pytest tests/ (如果有測試)
+
+# 統一配置生成作業
+prepare_config:
+  stage: deploy
+  needs: 
+    - build_agent
+    - test_agent
+  script:
+    - cd dist
+    - mkdir -p device_configs
+    # 為每台機器生成配置
+    - for i in {1..4}; do
+        echo "生成 $i 號機配置";
+        if [ -f "config/devices/device-$i.json" ]; then
+          cp "config/devices/device-$i.json" "device_configs/";
+        elif [ -f "config/devices/devices.json" ]; then
+          cat config/devices/devices.json | jq ".devices[$((i-1))]" > "device_configs/device-$i.json";
+        fi;
+      done
+  artifacts:
+    paths:
+      - dist/device_configs/
+    expire_in: 1 week
+
+# 部署到所有機台的通用腳本
+.deploy_script: &deploy_script
+  script:
+    - cd dist
+    - echo "部署到 ${DEVICE_ID} 號機"
+    - cp agent/* .
+    - cp ../scripts/utils.sh .
+    - cp config/plc_points.json .
+    - chmod +x deploy_agent.sh
+    - DEVICE_CONFIG="device_configs/device-${DEVICE_ID}.json"
+    - cp $DEVICE_CONFIG .
+    - ./deploy_agent.sh --device=$DEVICE_ID --server=$SERVER_IP --port=$LOCAL_PORT --interval=$INTERVAL --autostart=systemd
+
+# 部署到 1 號機
+deploy_to_agent1:
+  stage: deploy
+  needs: 
+    - prepare_config
+  variables:
+    DEVICE_ID: "1"
+  <<: *deploy_script
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"'
+  tags:
+    - agent1  # 只有標記為 agent1 的 runner 才會執行此作業
+
+# 部署到 2 號機
+deploy_to_agent2:
+  stage: deploy
+  needs: 
+    - prepare_config
+  variables:
+    DEVICE_ID: "2"
+  <<: *deploy_script
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"'
+  tags:
+    - agent2  # 只有標記為 agent2 的 runner 才會執行此作業
+
+# 部署到 3 號機
+deploy_to_agent3:
+  stage: deploy
+  needs: 
+    - prepare_config
+  variables:
+    DEVICE_ID: "3"
+  <<: *deploy_script
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"'
+  tags:
+    - agent3  # 只有標記為 agent3 的 runner 才會執行此作業
+
+# 部署到 4 號機
+deploy_to_agent4:
+  stage: deploy
+  needs: 
+    - prepare_config
+  variables:
+    DEVICE_ID: "4"
+  <<: *deploy_script
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"'
+  tags:
+    - agent4  # 只有標記為 agent4 的 runner 才會執行此作業
+
+# 手動部署到指定機台
+manual_deploy:
+  stage: deploy
+  needs: 
+    - prepare_config
+  script:
+    - cd dist
+    - cp agent/* .
+    - cp ../scripts/utils.sh .
+    - cp config/plc_points.json .
+    - chmod +x deploy_agent.sh
+    - DEVICE_CONFIG="device_configs/device-${DEVICE_ID}.json"
+    - if [ -f "$DEVICE_CONFIG" ]; then
+        cp $DEVICE_CONFIG .;
+        ./deploy_agent.sh --device=$DEVICE_ID --server=$SERVER_IP --port=$LOCAL_PORT --interval=$INTERVAL --autostart=systemd;
+      else
+        echo "錯誤: 找不到設備 ${DEVICE_ID} 的配置文件";
+        exit 1;
+      fi
+  when: manual
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"'
+  tags:
+    - modbus-agent  # 可以在任何標記為 modbus-agent 的 runner 上執行

@@ -1,0 +1,32 @@
+/
+├── agent/
+│   ├── collector_agent.py          # 保持原有的代理主程式不變
+│   ├── start_agent.sh              # 優化後的互動式安裝腳本
+│   ├── deploy_agent.sh             # CI/CD 部署腳本
+│   └── templates/                  # 腳本模板目錄
+│       └── service.template        # 服務定義模板
+│
+├── server/
+│   ├── setup_server.sh             # 中央伺服器設定腳本
+│   └── templates/                  # 配置模板目錄
+│       ├── docker-compose.yml      # Docker Compose 模板
+│       ├── prometheus.yml          # Prometheus 配置模板
+│       └── grafana-dashboard.json  # Grafana 儀表板模板
+│
+├── config/
+│   ├── devices/                    # 設備配置目錄
+│   │   ├── devices.json            # 設備集中配置
+│   │   ├── device-1.json           # 1號機配置
+│   │   ├── device-2.json           # 2號機配置
+│   │   ├── device-3.json           # 3號機配置
+│   │   └── device-4.json           # 4號機配置
+│   └── plc_points.json             # PLC 點位配置
+│
+├── scripts/
+│   ├── utils.sh                    # 共用函數腳本
+│   └── install_deps.sh             # 依賴安裝腳本
+│
+├── ci/
+│   └── .gitlab-ci.yml              # GitLab CI/CD 配置
+│
+└── README.md                       # 更新的說明文件

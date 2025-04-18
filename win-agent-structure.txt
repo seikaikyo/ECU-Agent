@@ -1,0 +1,32 @@
+\
+├── agent\
+│   ├── collector-agent.py          # 代理主程式
+│   ├── start-agent.ps1             # 優化後的互動式安裝腳本 (PowerShell)
+│   ├── deploy_agent.ps1            # CI/CD 部署腳本 (PowerShell)
+│   └── templates\                  # 腳本模板目錄
+│       └── service-template.xml    # Windows服務/計劃任務定義模板
+│
+├── server\
+│   ├── setup-server.ps1            # 中央伺服器設定腳本 (PowerShell)
+│   └── templates\                  # 配置模板目錄
+│       ├── docker-compose.yml      # Docker Compose 模板
+│       ├── prometheus.yml          # Prometheus 配置模板
+│       └── grafana-dashboard.json  # Grafana 儀表板模板
+│
+├── config\
+│   ├── devices\                    # 設備配置目錄
+│   │   ├── devices.json            # 設備集中配置
+│   │   ├── device-1.json           # 1號機配置
+│   │   ├── device-2.json           # 2號機配置
+│   │   ├── device-3.json           # 3號機配置
+│   │   └── device-4.json           # 4號機配置
+│   └── plc_points.json             # PLC 點位配置
+│
+├── scripts\
+│   ├── utils.ps1                   # 共用函數腳本 (PowerShell)
+│   └── install-deps.ps1            # 依賴安裝腳本 (PowerShell)
+│
+├── ci\
+│   └── .gitlab-ci.yml              # GitLab CI/CD 配置
+│
+└── README-Windows.md               # Windows環境說明文件
